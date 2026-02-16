@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamFlix - Watch Movies & TV Shows</title>
+    <!-- Inline favicon for guaranteed compatibility -->
+    <link rel="icon" href="https://img.freepik.com/premium-photo/red-letter-s-logo-design-with-black-background-suitable-luxury-company_1308175-221029.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="logo">STREAMFLIX</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#series">TV Shows</a></li>
+            <li><a href="#movies">Movies</a></li>
+            <li><a href="#new">New & Popular</a></li>
+            <li><a href="#mylist">My List</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="Titles, people, genres">
+                <span class="search-icon">🔍</span>
+            </div>
+            <div class="user-profile">
+                <img src="profile.jpeg" alt="Profile">
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <div class="hero-badge">Featured</div>
+            <h1 class="hero-title">STRANGER THINGS</h1>
+            <p class="hero-description">
+                When a young boy disappears, his mother, a police chief and his friends must confront terrifying supernatural forces in order to get him back. A love letter to the '80s classics that captivated a generation.
+            </p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="playContent()">
+                    ▶️ Play
+                </button>
+                <button class="btn btn-secondary" onclick="openModal('Stranger Things')">
+                    ℹ️ More Info
+                </button>
+            </div>
+            <div class="hero-meta">
+                <span>2016</span>
+                <span class="rating">TV-14</span>
+                <span>5 Seasons</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trending Now -->
+    <section class="trending-section">
+        <div class="section-header">
+            <h2 class="section-title">Trending Now</h2>
+        </div>
+        <div class="trending-container">
+            <button class="trending-arrow trending-arrow-left" id="trendingPrev" onclick="scrollTrending('prev')">
+                <span>‹</span>
+            </button>
+            <div class="trending-grid-wrapper">
+                <div class="trending-grid" id="trendingGrid">
+                    <div class="trending-card" onclick="openModal('The Crown')">
+                        <div class="trending-number">1</div>
+                        <img src="https://dnm.nflximg.net/api/v6/mAcAr9TxZIVbINe88xb3Teg5_OA/AAAABcZ8wsEuB1z96AEBK2hvlxHDwKMCEGbE4i0wzXlPo0PYxqQnpyJZzO3VUVE_nXEoe6AW2spo-3ylQ2DkbOfuig_7ND2Szl75xlLW.jpg?r=844" alt="Movie 1">
+                    </div>
+                    <div class="trending-card" onclick="openModal('Dark')">
+                        <div class="trending-number">2</div>
+                        <img src="https://resizing.flixster.com/ZgKoj9ydS5IR92topei_WUy04yU=/fit-in/705x460/v2/https://resizing.flixster.com/lpJkDxnEFNQT1OWJjnmYfvpAHJ0=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvUlRUVjI2NjgyOS53ZWJw" alt="Movie 2">
+                    </div>
+                    <div class="trending-card" onclick="openModal('Ozark')">
+                        <div class="trending-number">3</div>
+                        <img src="https://m.media-amazon.com/images/M/MV5BZDk1ZTdjOWItNTJmYS00MGIzLThmY2ItZWNiOGY5MzJlNTA5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Movie 3">
+                    </div>
+                    <div class="trending-card" onclick="openModal('Witcher')">
+                        <div class="trending-number">4</div>
+                        <img src="https://m.media-amazon.com/images/M/MV5BOTQzMzNmMzUtODgwNS00YTdhLTg5N2MtOWU1YTc4YWY3NjRlXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Movie 4">
+                    </div>
+                    <div class="trending-card" onclick="openModal('Money Heist')">
+                        <div class="trending-number">5</div>
+                        <img src="https://www.tallengestore.com/cdn/shop/products/MoneyHeist4-NetflixTVShowPoster_7e0e76a3-ff28-4625-bc59-6ac24288a02c.jpg?v=1589268616" alt="Movie 5">
+                    </div>
+                    <div class="trending-card" onclick="openModal('Breaking Bad')">
+                        <div class="trending-number">6</div>
+                        <img src="https://mediaproxy.tvtropes.org/width/1200/https://static.tvtropes.org/pmwiki/pub/images/breaking_bad_4.png" alt="Movie 6">
+                    </div>
+                    <div class="trending-card" onclick="openModal('Squid Game')">
+                        <div class="trending-number">7</div>
+                        <img src="https://m.media-amazon.com/images/M/MV5BYTU3ZDVhNmMtMDVlNC00MDc0LTgwNDMtYWE5MTI2ZGI4YWIwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Movie 7">
+                    </div>
+                    <div class="trending-card" onclick="openModal('Wednesday')">
+                        <div class="trending-number">8</div>
+                        <img src="https://m.media-amazon.com/images/M/MV5BMDE1NjNmZjgtZTg0OC00NjkxLWEzYzItMDNkMTc3YjgxZWQyXkEyXkFqcGc@._V1_.jpg" alt="Movie 8">
+                    </div>
+                    <div class="trending-card" onclick="openModal('The Last of Us')">
+                        <div class="trending-number">9</div>
+                        <img src="https://m.media-amazon.com/images/M/MV5BYWI3ODJlMzktY2U5NC00ZjdlLWE1MGItNWQxZDk3NWNjN2RhXkEyXkFqcGc@._V1_.jpg" alt="Movie 9">
+                    </div>
+                    <div class="trending-card" onclick="openModal('The Bear')">
+                        <div class="trending-number">10</div>
+                        <img src="https://m.media-amazon.com/images/M/MV5BYWZhNDZiMzAtZmZlYS00MWFmLWE2MWEtNDAxZTZiN2U4Y2U2XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" alt="Movie 10">
+                    </div>
+                </div>
+            </div>
+            <button class="trending-arrow trending-arrow-right" id="trendingNext" onclick="scrollTrending('next')">
+                <span>›</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Continue Watching -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">Continue Watching</h2>
+        </div>
+        <div class="content-row">
+            <div class="content-card" onclick="openModal('Black Mirror')">
+                <img src="https://www.dish.com/content/dish/us/en/home/dig/tv-shows/thriller/black-mirror-cast/_jcr_content/root/container/flexcontainer/row1/column0/image.coreimg.jpeg/1744382649981/blackmirrorthumb.jpeg" alt="Content">
+                <div class="card-overlay">
+                    <div class="card-title">Black Mirror</div>
+                    <div class="card-info">
+                        <span>2023</span>
+                        <span>TV-MA</span>
+                        <span>5 Seasons</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content-card" onclick="openModal('The Office')">
+                <img src="https://ca-times.brightspotcdn.com/dims4/default/d0dd73f/2147483647/strip/true/crop/4680x3240+0+0/resize/1200x831!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F5e%2F51%2F08e2ace149ff9067e7b5bf86e8c5%2Fthe-office-20th-copy.jpg" alt="Content">
+                <div class="card-overlay">
+                    <div class="card-title">The Office</div>
+                    <div class="card-info">
+                        <span>2019</span>
+                        <span>TV-14</span>
+                        <span>9 Seasons</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content-card" onclick="openModal('Narcos')">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4OLnCNCDOrgGXf6VNirlYeIKe39MBS3ogIQ&s" alt="Content">
+                <div class="card-overlay">
+                    <div class="card-title">Narcos</div>
+                    <div class="card-info">
+                        <span>2017</span>
+                        <span>TV-MA</span>
+                        <span>3 Seasons</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content-card" onclick="openModal('Peaky Blinders')">
+                <img src="https://eloutput.com/wp-content/uploads/2022/02/peaky-blinders-1.jpg" alt="Content">
+                <div class="card-overlay">
+                    <div class="card-title">Peaky Blinders</div>
+                    <div class="card-info">
+                        <span>2022</span>
+                        <span>TV-MA</span>
+                        <span>6 Seasons</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content-card" onclick="openModal('Vikings')">
+                <img src="https://i.ytimg.com/vi/IBehjjt6V70/maxresdefault.jpg" alt="Content">
+                <div class="card-overlay">
+                    <div class="card-title">Vikings</div>
+                    <div class="card-info">
+                        <span>2020</span>
+                        <span>TV-MA</span>
+                        <span>6 Seasons</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Action Movies -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">Action & Adventure</h2>
+        </div>
+        <div class="content-row">
+            <div class="content-card" onclick="openModal('Extraction')">
+                <img src="https://thefilmlegacy.com/wp-content/uploads/2023/07/extraction-1.jpeg" alt="Content">
+                <div class="card-overlay">
+                    <div class="card-title">Extraction</div>
+                    <div class="card-info">
+                        <span>2023</span>
+                        <span>R</span>
+                        <span>2h 10m</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content-card" onclick="openModal('Red Notice')">
+                <img src="https://liedkeonfilm.com/wp-content/uploads/2021/11/rednoticefeature.jpg?w=820" alt="Content">
+                <div class="card-overlay">
+                    <div class="card-title">Red Notice</div>
+                    <div class="card-info">
+                        <span>2021</span>
+                        <span>PG-13</span>
+                        <span>1h 58m</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content-card" onclick="openModal('The Gray Man')">
+                <img src="https://ntvb.tmsimg.com/assets/p21562309_v_h8_aa.jpg?w=1280&h=720" alt="Content">
+                <div class="card-overlay">
+                    <div class="card-title">The Gray Man</div>
+                    <div class="card-info">
+                        <span>2022</span>
+                        <span>PG-13</span>
+                        <span>2h 2m</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content-card" onclick="openModal('6 Underground')">
+                <img src="https://imageio.forbes.com/specials-images/imageserve/5df13e10e961e1000738da93/0x0.jpg?format=jpg&crop=1156,649,x227,y0,safe&height=900&width=1600&fit=bounds" alt="Content">
+                <div class="card-overlay">
+                    <div class="card-title">6 Underground</div>
+                    <div class="card-info">
+                        <span>2019</span>
+                        <span>R</span>
+                        <span>2h 8m</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content-card" onclick="openModal('Army of the Dead')">
+                <img src="https://images.squarespace-cdn.com/content/v1/5efce5920d28887981c5bd9b/1618341535664-VKIAPXHNRAK1HHT2H7DM/Army+of+the+Dead+cover+1.jpg" alt="Content">
+                <div class="card-overlay">
+                    <div class="card-title">Army of the Dead</div>
+                    <div class="card-info">
+                        <span>2021</span>
+                        <span>R</span>
+                        <span>2h 28m</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comedies -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">Comedies</h2>
+        </div>
+        <div class="content-row">
+            <div class="content-card" onclick="openModal('Brooklyn Nine-Nine')">
+                <img src="https://ntvb.tmsimg.com/assets/p20145748_b_h8_aa.jpg?w=960&h=540" alt="Content">
+                <div class="card-overlay">
+                    <div class="card-title">Brooklyn Nine-Nine</div>
+                    <div class="card-info">
+                        <span>2021</span>
+                        <span>TV-14</span>
+                        <span>8 Seasons</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content-card" onclick="openModal('Parks and Recreation')">
+                <img src="https://images1.resources.foxtel.com.au/store2/mount1/16/4/7j6ls.jpg" alt="Content">
+                <div class="card-overlay">
+                    <div class="card-title">Parks and Recreation</div>
+                    <div class="card-info">
+                        <span>2015</span>
+                        <span>TV-14</span>
+                        <span>7 Seasons</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content-card" onclick="openModal('The Good Place')">
+                <img src="https://rangeviewnews.org/wp-content/uploads/2020/02/f11df77f-115e-4eba-8efa-264f0ff322d0.jpeg" alt="Content">
+                <div class="card-overlay">
+                    <div class="card-title">The Good Place</div>
+                    <div class="card-info">
+                        <span>2020</span>
+                        <span>TV-PG</span>
+                        <span>4 Seasons</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content-card" onclick="openModal('Arrested Development')">
+                <img src="https://resizing.flixster.com/ScNzbBYrXzyENUWKGX1C3iFzqAo=/fit-in/705x460/v2/https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p184931_b_h10_ad.jpg" alt="Content">
+                <div class="card-overlay">
+                    <div class="card-title">Arrested Development</div>
+                    <div class="card-info">
+                        <span>2019</span>
+                        <span>TV-14</span>
+                        <span>5 Seasons</span>
+                    </div>
+                </div>
+            </div>
+            <div class="content-card" onclick="openModal('Schitts Creek')">
+                <img src="https://img4.hulu.com/user/v3/artwork/a2e7a946-9652-48a8-884b-3ea7ea4de273?base_image_bucket_name=image_manager&base_image=14302b5a-ed71-4eed-861e-81258a19326b&region=US&format=webp&size=952x536" alt="Content">
+                <div class="card-overlay">
+                    <div class="card-title">Schitt's Creek</div>
+                    <div class="card-info">
+                        <span>2020</span>
+                        <span>TV-14</span>
+                        <span>6 Seasons</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <div class="modal-hero">
+                <button class="close-modal" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <h2 class="modal-title" id="modalTitle">Content Title</h2>
+                <div class="modal-meta">
+                    <span>2023</span>
+                    <span class="rating">TV-MA</span>
+                    <span>3 Seasons</span>
+                </div>
+                <div class="hero-buttons" style="margin-bottom: 25px;">
+                    <button class="btn btn-primary" onclick="playContent()">
+                        ▶️ Play
+                    </button>
+                    <button class="btn btn-secondary" onclick="addToList()">
+                        ➕ My List
+                    </button>
+                </div>
+                <p class="modal-description">
+                    An epic tale of adventure, mystery, and intrigue that will keep you on the edge of your seat. Follow the characters through their journey as they discover the truth about their world and themselves. With stunning visuals and compelling storytelling, this is a must-watch experience.
+                </p>
+                <div class="modal-details">
+                    <div class="detail-item">
+                        <div class="detail-label">Cast:</div>
+                        <div class="detail-value">John Doe, Jane Smith, Michael Johnson</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Genres:</div>
+                        <div class="detail-value">Drama, Thriller, Mystery</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Director:</div>
+                        <div class="detail-value">Christopher Nolan</div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Awards:</div>
+                        <div class="detail-value">Emmy Winner, Golden Globe</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Account</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Discover</h4>
+                    <ul>
+                        <li><a href="#">Gift Cards</a></li>
+                        <li><a href="#">Redeem Gift Card</a></li>
+                        <li><a href="#">Ways to Watch</a></li>
+                        <li><a href="#">Corporate Info</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Social</h4>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                © 2025 StreamFlix Clone | Designed & Developed by Sumit Behera
+                <p class="disclaimer">Disclaimer: This is a non-commercial educational project and is not affiliated with or endorsed by Netflix, Inc.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
