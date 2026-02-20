@@ -28,14 +28,14 @@
 - [About the Project](#-about-the-project)
 - [Live Demo](#-live-demo)
 - [Features](#-features)
-- [Tech Stack](#-tech-stack)
+- [Tech Stack](#tech-stack)
 - [Project Structure](#-project-structure)
 - [Getting Started](#-getting-started)
 - [Deployment](#-deployment)
 - [Content Showcase](#-content-showcase)
-- [Roadmap](#-roadmap)
-- [Disclaimer](#-disclaimer)
-- [Author](#-author)
+- [Roadmap](#roadmap)
+- [Disclaimer](#disclaimer)
+- [Author](#author)
 
 ---
 
@@ -107,6 +107,7 @@ This project was built as part of a self-learning journey to master frontend dev
 
 ---
 
+<a name="tech-stack"></a>
 ## 🛠️ Tech Stack
 
 <div align="center">
@@ -206,6 +207,7 @@ This project is deployed on **GitHub Pages**. To deploy your own fork:
 
 ---
 
+<a name="roadmap"></a>
 ## 🗺️ Roadmap
 
 - [x] Hero banner with featured content
@@ -220,12 +222,14 @@ This project is deployed on **GitHub Pages**. To deploy your own fork:
 
 ---
 
+<a name="disclaimer"></a>
 ## ⚠️ Disclaimer
 
 This project is built **purely for educational and portfolio purposes**. It is **not affiliated with, endorsed by, or connected to Netflix, Inc.** in any way. All show titles, images, and trademarks are the property of their respective owners and are used here solely for demonstrative purposes.
 
 ---
 
+<a name="author"></a>
 ## 👨‍💻 Author
 
 <div align="center">
